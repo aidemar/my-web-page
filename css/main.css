@@ -1,52 +1,80 @@
 * {
   box-sizing: border-box;
+/*  Esto hizo que los elementos ya no se pusieran hacia abajo.
+*/  
+  margin: 0;
+  padding: 0;
 }
 
-body {
+/*body {
   width: 100%;
   margin: 0;
   padding: 0;
-}
+}*/
 
-.main-title, .menu, .header {
+
+/*.menu, .container {
   margin: 0;
   padding: 0;
-}
+}*/
 
 /* .menu {
   float: right;
 } */
 
-.row::after,
-.row::before {
-  content: " ";
+.row:before,
+.row:after {
+  content:"";
   display: table;
 }
 
-.row::after {
+.row:after {
   clear: both;
 }
-/*
-[class*="col-"] {
+
+.row{
+  margin: auto;
+  width: 100%;
+  height: auto;
+}
+
+[class*="col-"]{
    float: left;
-   margin: 10px;
-} */
+   min-height: 10px;
+   padding: 20px;
+} 
+
 
 .col-12 {
   width: calc(100%);
-  background: pink;
 }
 
 .col-4 {
-  width: calc(33.333% - 20px);
+  width: calc(33.333%);
 }
 
 .col-8 {
-  width: calc(66.66% - 20px);
+  width: calc(66.66%);
+}
+
+.col-10{width: calc(83.33%);
+}
+
+.container{
+  width: 100%;
+  max-width: 1980px;
+  margin: 0px auto;
+}
+
+/*Estilos header*/
+header {
+  background-color: pink;
 }
 
 ul {
 	list-style: none;
+  float: right;
+  font-size: 1.5em;
 }
 
 a {
@@ -59,21 +87,40 @@ a {
 li {
   display: inline-block;
   text-align: center;
-  margin-left: 10%;
 }
 
-/* nav {
-	width: 30%;
-	margin-right: 20%;
-	text-align: center;
-} */
+.title {
+  font-size: 1.5em;
+}
 
+/*Estilos seccion principal
+*/
 .main-title {
   font-size: 2em;
   color: white;
+  text-align: center;
 }
 
 .main-section {
   background: gray;
   height: 400px;
+}
+
+/*Estilos footer*/
+
+footer {
+  text-align: center;
+  background-color: gray;
+}
+
+/*Media queries*/
+
+@media (max-width:480px) {
+  .card-section{
+    width: 100%;
+  }
+  
+  .col-s-12{
+    width: 100%;
+  }
 }
